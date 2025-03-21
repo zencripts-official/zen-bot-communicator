@@ -32,6 +32,17 @@ const HeroSection: React.FC = () => {
     };
   }, []);
 
+  const handleTryZaraClick = () => {
+    window.open('https://zenzara-ai.netlify.app/', '_blank');
+  };
+
+  const handleLearnMoreClick = () => {
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
       {/* Background orbs */}
@@ -87,10 +98,17 @@ const HeroSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <Button className="bg-zara-indigo hover:bg-zara-indigo/90 text-white px-8 py-6 rounded-full text-lg font-medium">
+          <Button 
+            className="bg-zara-indigo hover:bg-zara-indigo/90 text-white px-8 py-6 rounded-full text-lg font-medium"
+            onClick={handleTryZaraClick}
+          >
             Try Zara AI
           </Button>
-          <Button variant="outline" className="border-zara-gray/30 hover:bg-secondary px-8 py-6 rounded-full text-lg font-medium">
+          <Button 
+            variant="outline" 
+            className="border-zara-gray/30 hover:bg-secondary px-8 py-6 rounded-full text-lg font-medium"
+            onClick={handleLearnMoreClick}
+          >
             Learn More
           </Button>
         </motion.div>

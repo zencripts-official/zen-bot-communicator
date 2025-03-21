@@ -18,6 +18,10 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
+  const handleTryZaraClick = () => {
+    window.open('https://zenzara-ai.netlify.app/', '_blank');
+  };
+  
   return (
     <>
       <motion.nav 
@@ -48,7 +52,10 @@ const Navbar: React.FC = () => {
           </div>
           
           <div className="hidden md:block">
-            <Button className="bg-zara-blue hover:bg-zara-blue/90 text-white rounded-full">
+            <Button 
+              className="bg-zara-blue hover:bg-zara-blue/90 text-white rounded-full"
+              onClick={handleTryZaraClick}
+            >
               Try Zara
             </Button>
           </div>
@@ -115,7 +122,10 @@ const Navbar: React.FC = () => {
             </div>
             
             <div className="mt-auto p-6">
-              <Button className="bg-zara-blue hover:bg-zara-blue/90 text-white rounded-full w-full py-6 text-lg">
+              <Button 
+                className="bg-zara-blue hover:bg-zara-blue/90 text-white rounded-full w-full py-6 text-lg"
+                onClick={handleTryZaraClick}
+              >
                 Try Zara
               </Button>
             </div>

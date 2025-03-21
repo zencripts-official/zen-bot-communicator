@@ -8,6 +8,14 @@ const CtaSection: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px 0px" });
   
+  const handleTryZaraClick = () => {
+    window.open('https://zenzara-ai.netlify.app/', '_blank');
+  };
+  
+  const handleViewDocsClick = () => {
+    window.open('https://zenzara-ai.netlify.app/', '_blank');
+  };
+  
   return (
     <section ref={ref} className="py-20 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
@@ -86,11 +94,18 @@ const CtaSection: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <Button className="bg-gradient-to-r from-zara-indigo to-zara-purple hover:bg-zara-indigo/90 text-white px-8 py-6 rounded-full text-lg font-medium group">
+            <Button 
+              className="bg-gradient-to-r from-zara-indigo to-zara-purple hover:bg-zara-indigo/90 text-white px-8 py-6 rounded-full text-lg font-medium group"
+              onClick={handleTryZaraClick}
+            >
               Get Started Now
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
-            <Button variant="outline" className="border-zara-gray/30 hover:bg-secondary px-8 py-6 rounded-full text-lg font-medium">
+            <Button 
+              variant="outline" 
+              className="border-zara-gray/30 hover:bg-secondary px-8 py-6 rounded-full text-lg font-medium"
+              onClick={handleViewDocsClick}
+            >
               View Documentation
             </Button>
           </motion.div>
